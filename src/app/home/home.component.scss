@@ -28,12 +28,21 @@ a {
 }
 
 .active {
-  background-color: red;
+  background-color: #fff;
   border-radius: 10px;
   padding: 5px;
 }
 .inActive {
   // background-color: green;
   border-radius: 10px;
+  padding: 5px;
+}
+
+ul > li {
+  list-style-type: none;
+  display: inline-block;
+  // background-color: #dadada;
+  margin: 5px;
+  // border: 3px solid red;
   padding: 5px;
 }

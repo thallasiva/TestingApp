@@ -56,9 +56,11 @@ export class HomeComponent {
   ];
 
   selectedIndex = 0;
+  selectedTabName: any = 'Customer';
   constructor() {}
 
-  selected(index: number) {
+  selected(selectedObj: any, index: number) {
+    this.selectedTabName = selectedObj.name;
     this.selectedIndex = index;
   }
 }

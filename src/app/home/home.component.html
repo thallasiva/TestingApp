@@ -37,7 +37,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item" *ngFor="let tabs of navBarList;let i = index"
-                    [ngClass]="selectedIndex == i ? 'active':'inActive'" (click)="selected(i)">
+                    [ngClass]="selectedIndex == i ? 'active':'inActive'" (click)="selected(tabs,i)">
                     <a>{{tabs.name}}</a>
                 </li>
                 <!-- <li class="nav-item">
@@ -55,7 +55,16 @@
 </nav>
 
 <div class="gridSystem">
-    <div class="row">
+    <h3>{{selectedTabName}}</h3>
+
+    <div class="grid">
+        <ul>
+            <li> Card View </li>
+            <li> List View </li>
+            <li> Add Customer </li>
+        </ul>
+    </div>
+    <div class="row" *ngIf="selectedIndex == 0">
         <div class="col-sm-3 padd10" *ngFor="let userInfo of bodyInformation;let i = index">
             <div class="card">
                 <div class="card-body">
@@ -65,7 +74,5 @@
                 </div>
             </div>
         </div>
-
-
     </div>
 </div>
