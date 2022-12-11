@@ -19,4 +19,9 @@ export class LoginComponent {
       alert('please enter valid username and pwd');
     }
   }
+
+  register() {
+    // register
+    this.router.navigate(['/register']);
+  }
 }
