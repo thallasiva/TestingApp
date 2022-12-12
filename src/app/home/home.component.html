@@ -75,4 +75,22 @@
             </div>
         </div>
     </div>
+
+    <!-- orders -->
+    <div class="row" *ngIf="selectedIndex == 1">
+        <div class="col-sm-3 padd10" *ngFor="let orders of ordersList;let i = index">
+            <div class="card" (click)="selectedProduct(orders)">
+                <div class="card-body">
+                    <img [src]="orders.product_image" alt="defaultImage" class="img-fluid"
+                        style="height: 200px;object-fit: contain;">
+                    <p class="card-text">{{orders.product_name}}</p>
+                    <p class="card-text"> <b style="color: green;">Price:</b> &#x20B9; {{orders.price}} <b
+                            style="color: red;">
+                            Original Price: </b><del>
+                            &#x20B9; {{orders.original_price}}</del></p>
+                    <p>{{orders.desc}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
