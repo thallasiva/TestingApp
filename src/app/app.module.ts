@@ -7,11 +7,21 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { ApiListService } from './api-list.service';
+import { HttpClientModule } from '@angular/common/http';
+import { CurdListComponent } from './curd-list/curd-list.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, HomeComponent, RegisterComponent, ProductDetailsComponent],
-  imports: [BrowserModule, FormsModule, AppRoutingModule],
-  providers: [],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    HomeComponent,
+    RegisterComponent,
+    ProductDetailsComponent,
+    CurdListComponent,
+  ],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
+  providers: [ApiListService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

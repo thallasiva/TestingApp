@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-sm-3 padd10" *ngFor="let userInfo of usersList;let i = index">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{userInfo.id}}</h5>
+                <p class="card-text1">{{userInfo.title}}</p>
+                <p class="card-text">{{userInfo.body}}</p>
+            </div>
+
+            <div class="card-footer text-center">
+                <button class="btn btn-primary btn-sm float-left" id="left" style="color:white">
+                    Edit
+                </button>
+                <button class="btn btn-danger btn-sm float-right" id="right" style="color:white"
+                    (click)="deleteUser(userInfo.id)">
+                    Delete
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
