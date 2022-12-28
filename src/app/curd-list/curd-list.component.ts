@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
 import { ApiListService } from '../api-list.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { ApiListService } from '../api-list.service';
 })
 export class CurdListComponent implements OnInit {
   usersList: any = [];
-  constructor(public service: ApiListService) {}
+  constructor(public service: ApiListService, public router: Router) {}
 
   ngOnInit() {
     this.getEmpList();
@@ -28,5 +29,14 @@ export class CurdListComponent implements OnInit {
       this.usersList.splice(index, 1);
       console.log('recored deleted success', this.usersList);
     });
+  }
+
+  updateUserDetails(selectedObj: any) {
+    const navigationExtras: NavigationExtras = {
+      state: {
+        bacword: selectedObj,
+      },
+    };
+    this.router.navigate(['createUpdate'], navigationExtras);
   }
 }

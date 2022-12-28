@@ -1,0 +1,17 @@
+<div class="updateScreen">
+    <form>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">title</label>
+            <input type="email" class="form-control" [(ngModel)]="titleName" name="title" id="exampleFormControlInput1"
+                placeholder="title">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Body</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="body" [(ngModel)]="bodyName"
+                placeholder="body" rows="3"></textarea>
+        </div>
+
+        <button class="btn btn-primary" (click)="updateUserDetails()"> Update </button>
+    </form>
+</div>

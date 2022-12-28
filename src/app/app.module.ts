@@ -10,6 +10,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { ApiListService } from './api-list.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CurdListComponent } from './curd-list/curd-list.component';
+import { CreateUpdateComponent } from './create-update/create-update.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { CurdListComponent } from './curd-list/curd-list.component';
     RegisterComponent,
     ProductDetailsComponent,
     CurdListComponent,
+    CreateUpdateComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
   providers: [ApiListService],

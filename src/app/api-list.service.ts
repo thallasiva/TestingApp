@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -10,6 +10,11 @@ export class ApiListService {
   constructor(public httpClient: HttpClient) {}
 
   // get , put , delete, post
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    }),
+  };
 
   getUserListService(): Observable<any[]> {
     return this.httpClient.get<any[]>(this.apiUrl + '/' + 'posts');
@@ -17,5 +22,21 @@ export class ApiListService {
   // delete specific user in list
   userDelete(id: any): Observable<any[]> {
     return this.httpClient.delete<any[]>(this.apiUrl + '/' + 'posts/' + id);
+  }
+
+  addMember(body: any): Observable<any[]> {
+    return this.httpClient.post<any[]>(
+      this.apiUrl + '/posts/',
+      JSON.stringify(body),
+      this.httpOptions
+    );
+  }
+
+  updateMember(id: any, body: any): Observable<any> {
+    return this.httpClient.put<any[]>(
+      this.apiUrl + '/posts/' + id,
+      JSON.stringify(body),
+      this.httpOptions
+    );
   }
 }
